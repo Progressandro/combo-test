@@ -4,7 +4,7 @@ export default async function getCards(req, res) {
   try {
     initSDK()
     const cards = await firebaseAdmin.firestore().collection("cards").get()
-    res.json(cards.docs)
+    res.json(cards.docs.map((i) => i.data()))
   } catch (e) {
     console.error(e)
     res.status(500).json({ message: "F" })
