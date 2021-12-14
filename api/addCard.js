@@ -13,6 +13,7 @@ export default async function addCard(req, res) {
     "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
   )
   try {
+    initSDK();
     const ref = await firebaseAdmin
       .firestore()
       .collection("cards")
