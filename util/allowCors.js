@@ -1,4 +1,4 @@
-const allowCors = (fn) => (req, res) => {
+const allowCors = (fn) => async (req, res) => {
   res.setHeader("Access-Control-Allow-Credentials", true)
   res.setHeader("Access-Control-Allow-Origin", "*")
   res.setHeader(
