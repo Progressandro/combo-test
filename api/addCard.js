@@ -4,6 +4,10 @@ const allowCors = require("../util/allowCors")
 async function handler(req, res) {
   try {
     initSDK()
+    const formattedBody = {
+      ...req.body,
+      added: Date.now(),
+    }
     const ref = await firebaseAdmin
       .firestore()
       .collection("cards")
