@@ -1,16 +1,8 @@
 import initSDK from "../firebase/init"
 import firebaseAdmin from "firebase-admin"
-export default async function getCards(req, res) {
-  res.setHeader("Access-Control-Allow-Credentials", true)
-  res.setHeader("Access-Control-Allow-Origin", "*")
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-  )
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-  )
+import allowCors from "../util/allowCors"
+
+async function handler(req, res) {
   try {
     initSDK()
     const cards = await firebaseAdmin.firestore().collection("cards").get()
@@ -20,3 +12,5 @@ export default async function getCards(req, res) {
     res.status(500).json({ message: "F" })
   }
 }
+
+export default allowCors(handler)
