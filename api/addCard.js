@@ -15,4 +15,4 @@ function handler(req, res) {
   }
 }
 
-export default allowCors(handler)
+module.exports = allowCors(handler)
