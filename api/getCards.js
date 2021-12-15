@@ -1,6 +1,6 @@
-import initSDK from "../firebase/init"
-import firebaseAdmin from "firebase-admin"
-import allowCors from "../util/allowCors"
+const initSDK = require("../firebase/init")
+const firebaseAdmin = require("firebase-admin")
+const allowCors = require("../util/allowCors")
 
 function handler(req, res) {
   try {
@@ -13,4 +13,4 @@ function handler(req, res) {
   }
 }
 
-export default allowCors(handler)
+module.exports = allowCors(handler)
