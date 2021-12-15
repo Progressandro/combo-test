@@ -1,4 +1,4 @@
-const allowCors = (fn) => async (req, res) => {
+const allowCors = (fn) => (req, res) => {
   res.setHeader("Access-Control-Allow-Credentials", true)
   res.setHeader("Access-Control-Allow-Origin", "*")
   res.setHeader(
@@ -15,3 +15,5 @@ const allowCors = (fn) => async (req, res) => {
   }
   return await fn(req, res)
 }
+
+module.exports = allowCors
