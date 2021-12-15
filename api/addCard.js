@@ -11,7 +11,7 @@ async function handler(req, res) {
     const ref = await firebaseAdmin
       .firestore()
       .collection("cards")
-      .add(req.body)
+      .add(formattedBody)
     res.json({ id: ref.id })
   } catch (e) {
     console.error(e)
