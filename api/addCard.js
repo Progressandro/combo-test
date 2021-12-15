@@ -1,7 +1,7 @@
 import initSDK from "../firebase/init"
 import firebaseAdmin from "firebase-admin"
 import allowCors from "../util/allowCors"
-async function handler(req, res) {
+function handler(req, res) {
   try {
     initSDK()
     const ref = await firebaseAdmin
