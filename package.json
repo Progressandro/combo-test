@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Progressandro/combo-test#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "firebase-admin": "^10.0.0"
   }
 }
