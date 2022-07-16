@@ -1,2 +1,2 @@
 # Credit Card App (Backend)
-Just create and read operations.
+Simple API to get and store credit card info to backend. (Created under 6 hours during a technical interview)
